@@ -1,48 +1,240 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - WebProject</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Etü Web</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/img/favicon.png" rel="icon">
+    <link href="~/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="~/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS Files -->
+    <link href="~/css/variables.css" rel="stylesheet">
+    <link href="~/css/main.css" rel="stylesheet">
+
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebProject</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <a href="index.html" class="logo d-flex align-items-center">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <!-- <img src="assets/img/logo.png" alt=""> -->
+                <h1>ETÜ HAKKINDAKİ HER ŞEY</h1>
+            </a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a href="https://ubys.erzurum.edu.tr/">Ubys</a></li>
+                    <li><a href="https://idp.kimlik.erzurum.edu.tr/sso/v2/auth/login">BlackBoard</a></li>
+                    <li class="dropdown">
+                        <a href="category.html"><span>Bölümler</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                        <ul>
+                            <li><a href="#">Tarih</a></li>
+                            <li class="dropdown">
+                                <a href="#"><span>Mühendislik</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                                <ul>
+                                    <li><a href="#">Bilgisayar Mühendisliği</a></li>
+                                    <li><a href="#">Elektirik elektironik Mühendisliği</a></li>
+                                    <li><a href="#">Uzay Mühendisliği</a></li>
+                                    <li><a href="#">Mekine Mühendisliği</a></li>
+                                    <li><a href="#">inşaat Mühendisliği</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Hemşirelik</a></li>
+                            <li><a href="#">Matematik</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="about.html">Hakkımızda</a></li>
+                    <li><a href="contact.html">iletişim</a></li>
+                </ul>
+            </nav><!-- .navbar -->
+
+            <div class="position-relative">
+                <a href="#" class="mx-2"><span class="bi-facebook"></span></a>
+                <a href="#" class="mx-2"><span class="bi-twitter"></span></a>
+                <a href="#" class="mx-2"><span class="bi-instagram"></span></a>
+
+                <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+
+                <!-- ======= Search Form ======= -->
+                <div class="search-form-wrap js-search-form-wrap">
+                    <form action="search-result.html" class="search-form">
+                        <span class="icon bi-search"></span>
+                        <input type="text" placeholder="Search" class="form-control">
+                        <button class="btn js-search-close"><span class="bi-x"></span></button>
+                    </form>
+                </div><!-- End Search Form -->
+
             </div>
-        </nav>
-    </header>
+
+        </div>
+
+    </header><!-- End Header -->
+
     <div class="container">
         <main role="main" class="pb-3">
+
+
             @RenderBody()
         </main>
     </div>
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - WebProject - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div class="footer-content">
+            <div class="container">
+
+                <div class="row g-5">
+                    <div class="col-lg-4">
+                        <h3 class="footer-heading">Etü hakkında</h3>
+                        <p>Erzurum Teknik Üniversitesi, Türkiye'nin Erzurum şehrinde bulunan bir devlet üniversitesidir. 2010 yılında kurulmuştur. Çeşitli mühendislik ve fen bilimleri alanlarında lisans, yüksek lisans ve doktora programları sunmaktadır. Üniversite, bölgedeki teknolojik ve bilimsel gelişime katkıda bulunmayı hedeflemektedir. Ana kampüsü Erzurum'un Palandöken ilçesindedir.</p>
+                        <p><a href="about.html" class="footer-link-more">Daha fazla</a></p>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <h3 class="footer-heading">İşlemler</h3>
+                        <ul class="footer-links list-unstyled">
+                            <li><a href="index.html"><i class="bi bi-chevron-right"></i> Anasayfa</a></li>
+                            <li><a href="category.html"><i class="bi bi-chevron-right"></i> Bölümler</a></li>
+                            <li><a href="about.html"><i class="bi bi-chevron-right"></i> Hakkımızda</a></li>
+                            <li><a href="contact.html"><i class="bi bi-chevron-right"></i> iletişim</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <h3 class="footer-heading">Etkinlikler</h3>
+                        <ul class="footer-links list-unstyled">
+                            <li><a href="category.html"><i class="bi bi-chevron-right"></i> Yarışmalar</a></li>
+                            <li><a href="category.html"><i class="bi bi-chevron-right"></i> Etkinlikler</a></li>
+                            <li><a href="category.html"><i class="bi bi-chevron-right"></i> Duyurular</a></li>
+                            <li><a href="category.html"><i class="bi bi-chevron-right"></i> Spor</a></li>
+                            <li><a href="category.html"><i class="bi bi-chevron-right"></i> Konferanslar</a></li>
+
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <h3 class="footer-heading">Duyurular</h3>
+
+                        <ul class="footer-links footer-blog-entry list-unstyled">
+                            <li>
+                                <a href="single-post.html" class="d-flex align-items-center">
+                                    <img src="~/img/post-sq-1.jpg" alt="" class="img-fluid me-3">
+                                    <div>
+                                        <div class="post-meta d-block"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                                        <span>5 Great Startup Tips for Female Founders</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="single-post.html" class="d-flex align-items-center">
+                                    <img src="~/img/post-sq-2.jpg" alt="" class="img-fluid me-3">
+                                    <div>
+                                        <div class="post-meta d-block"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                                        <span>What is the son of Football Coach John Gruden, Deuce Gruden doing Now?</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="single-post.html" class="d-flex align-items-center">
+                                    <img src="~/img/post-sq-3.jpg" alt="" class="img-fluid me-3">
+                                    <div>
+                                        <div class="post-meta d-block"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                                        <span>Life Insurance And Pregnancy: A Working Mom’s Guide</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="single-post.html" class="d-flex align-items-center">
+                                    <img src="~/img/post-sq-4.jpg" alt="" class="img-fluid me-3">
+                                    <div>
+                                        <div class="post-meta d-block"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                                        <span>How to Avoid Distraction and Stay Focused During Video Calls?</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <div class="footer-legal">
+            <div class="container">
+
+                <div class="row justify-content-between">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        <div class="copyright">
+                            © Copyright <strong><span>Etü Burada</span></strong> 7/24 Etü
+                        </div>
+
+                        <div class="credits">
+                            <!-- All the links in the footer should remain intact. -->
+                            <!-- You can delete the links only if you purchased the pro version. -->
+                            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
+                            Designed by <a>Fatih Mehmet Gürbüz / Ahmet Bilge </a>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="social-links mb-3 mb-lg-0 text-center text-md-end">
+                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
+                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/vendor/aos/aos.js"></script>
+    <script src="~/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/js/main.js"></script>
+
+
 </body>
+
 </html>
