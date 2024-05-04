@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<WebProject.Models.Project>
+<br>
+<br>
+<br>
+<br>
+<style>
+    .person_item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+        width: 30%; /* İstenilen genişliğe göre ayarlayın */
+    }
+
+        .person_item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+    .details {
+        text-align: center;
+    }
+
+    .AdSoyad {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .TelefonNumarasi {
+        font-size: 14px;
+    }
+</style>
+
+<div id="person_list" class="row" style="display: flex; flex-wrap: wrap;">
+    <h3 class="block_title col-md-12">Projeler</h3>
+    @if (Model != null && Model.Any())
+    {
+        @foreach (var Project in Model)
+        {
+            <div class="person_item col-md-4">
+                @if (!string.IsNullOrEmpty(Project.ResimUrl))
+                {
+                    <img src="@Project.ResimUrl" alt="Proje Resmi" />
+                }
+                <div class="details">
+                    <div class="AdSoyad">@Project.ProjeIsmi</div>
+                    <div class="TelefonNumarasi">@Project.ProjeHakkında</div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <p class="col-md-12">Kişiler bulunamadı.</p>
+    }
+</div>
+
+

@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<WebProject.Models.Person>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div id="person_list" class="container">
+    
+    <div class="row">
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var person in Model)
+            {
+                
+                    <div class="person_item">
+                        <a>
+                            @if (!string.IsNullOrEmpty(person.ResimUrl))
+                            {
+                                <img src="@person.ResimUrl" alt="Kişi Resmi" class="person_image" />
+                            }
+                        <div class="person_details">
+                            <div class="AdSoyad:">@person.AdSoyad</div>
+                            <div class="TelefonNumarasi:">@person.TelefonNUmarası</div>
+                            <div class="Eposta:">@person.Eposta</div>
+                            <a>Lisansını Tamamladığı Üniversite:</a>
+                            <div class="Lisans">@person.lisans</div>
+                            <a>YüksekLisansını Tamamladığı Üniversite:</a>
+                            <div class="YüksekLisans">@person.YüksekLisans</div>
+                            <a>Doktorasını Tamamladığı Üniversite:</a>
+                            <div class="Doktora">@person.Doktora</div>
+                            <a>Arastırma Alaları:</a>
+                            <div class="Arastırma">@person.ArastirmaAlanı</div>
+
+
+
+                        </div>
+                        </a>
+                    </div>
+                
+            }
+        }
+        else
+        {
+            <div class="col-md-12">
+                <p>Kişiler bulunamadı.</p>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .block_title {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .person_item {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 20px;
+        background-color: #f9f9f9;
+    }
+
+    .person_link {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .person_image {
+        max-width: 100%;
+        height: 300px;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 100px;
+    }
+
+    .person_details {
+        text-align: center;
+    }
+</style>

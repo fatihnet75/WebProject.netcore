@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@model IEnumerable<WebProject.Models.Person>
+  
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <input type="text" class="form-control" name="ad" placeholder="Ad Soyad" required="">
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="email" class="form-control" id="exampleInputEmail1" name="Email" aria-describedby="emailHelp" placeholder="E-Posta adresinizi giriniz" required="">
+            </div>
+            <br>
+            <div class="form-group">
+                <select class="form-control" name="konu" id="exampleFormControlSelect1">
+                    <option>Yapmak İstediğiniz işlemi seçiniz</option>
+                    <option>Bilgi Edinme</option>
+                    <option>İstek</option>
+                    <option>Şikayet</option>
+                </select>
+            </div>
+            <div class="form-group"></div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Mesajınız</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="Mesaj" rows="3" required=""></textarea>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" name="Onay_Formu" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Kişisel Veri Kaydı Onay Formu! metnini kabul ediyorum.</label>
+            </div>
+            <div class="form-group">
+                <div class="g-recaptcha" data-sitekey="6LeyQhcTAAAAADY3hENRPugc9PZTR-WfMg5DoTGY"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" width="304" height="78" role="presentation" name="a-z3sze5h6r4hv" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LeyQhcTAAAAADY3hENRPugc9PZTR-WfMg5DoTGY&amp;co=aHR0cHM6Ly9lcnp1cnVtLmVkdS50cjo0NDM.&amp;hl=tr&amp;v=WQcDpAcHn0sjM6ZiVkU8JwNH&amp;size=normal&amp;cb=iqwfp0k38po0"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
+                <p><a style="color: #406eab;" href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=4982&amp;MevzuatTur=1&amp;MevzuatTertip=5" target="_blank">Lütfen mesajınızın 4982 sayılı Bilgi Edinme Hakkı Kanunu kapsamında değerlendirileceğini dikkate alınız.</a></p>
+                <button type="submit" class="btn btn-primary">GÖNDER</button>
+
+
+
+
+
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <ul class="sub-menu">
+                <li><label for="exampleInputEmail1" style="border-bottom: 4px solid #3e6ca7;">İLETİŞİM BİLGİLERİ</label></li>
+                <li>
+                    <p><strong>Adres::</strong>Ömer Nasuhi Bilmen Mah. Farabi Bulvarı No:12 25100 Yakutiye/ERZURUM</p>
+                </li>
+                <li>
+                    <p><strong>E-Posta:</strong>bilgi@erzurum.edu.tr</p>
+                </li>
+                <li>
+                    <p><strong>Telefon:</strong>444 5 388</p>
+                </li>
+                <li>
+                    <p><strong>Kep Adresi:</strong>etu@hs01.kep.tr</p>
+                </li>
+            </ul>
+        </div>
+    </div>

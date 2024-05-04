@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 
 
@@ -46,28 +47,55 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a href="https://ubys.erzurum.edu.tr/">Ubys</a></li>
-                    <li><a href="https://idp.kimlik.erzurum.edu.tr/sso/v2/auth/login">BlackBoard</a></li>
+                    <li><a href="https://lms.erzurum.edu.tr/ultra/institution-page">BlackBoard</a></li>
                     <li class="dropdown">
-                        <a href="category.html"><span>Bölümler</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                        <a ><span>Bölümler</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
-                            <li><a href="#">Tarih</a></li>
                             <li class="dropdown">
-                                <a href="#"><span>Mühendislik</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                                <a href="#"><span>Edebiyat Fakültesi</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                                 <ul>
-                                    <li><a href="#">Bilgisayar Mühendisliği</a></li>
-                                    <li><a href="#">Elektirik elektironik Mühendisliği</a></li>
-                                    <li><a href="#">Uzay Mühendisliği</a></li>
-                                    <li><a href="#">Mekine Mühendisliği</a></li>
-                                    <li><a href="#">inşaat Mühendisliği</a></li>
+                                    <li><a href="/Category/Index/">Bilgisayar Mühendisliği</a></li>
+                                    <li><a href="/Category/Index/">Elektirik elektironik Mühendisliği</a></li>
+                                    <li><a href="/Category/Index/">Uzay Mühendisliği</a></li>
+                                    <li><a href="/Category/Index/">Mekine Mühendisliği</a></li>
+                                    <li><a href="/Category/Index/">inşaat Mühendisliği</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Hemşirelik</a></li>
-                            <li><a href="#">Matematik</a></li>
+                            <li class="dropdown">
+                                <a href="#"><span>Mühendislik Fakültesi</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                                <ul>
+                                    <li><a href="/Category/Index/">Bilgisayar Mühendisliği</a></li>
+                                    <li><a href="/Category/Index/">Elektirik elektironik Mühendisliği</a></li>
+                                    <li><a href="/Category/Index/">Uzay Mühendisliği</a></li>
+                                    <li><a href="/Category/Index/">Mekine Mühendisliği</a></li>
+                                    <li><a href="/Category/Index/">inşaat Mühendisliği</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#"><span>Sağlık fakültesi</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                                <ul>
+                                    <li><a href="/Category/Index/">Bilgisayar Mühendisliği</a></li>
+                                    <li><a href="/Category/Index/">Elektirik elektironik Mühendisliği</a></li>
+                                    <li><a href="/Category/Index/">Uzay Mühendisliği</a></li>
+                                    <li><a href="/Category/Index/">Mekine Mühendisliği</a></li>
+                                    <li><a href="/Category/Index/">inşaat Mühendisliği</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#"><span>Fen Fakültesi</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                                <ul>
+                                    <li><a href="/Category/Index/">Bilgisayar Mühendisliği</a></li>
+                                    <li><a href="/Category/Index/">Elektirik elektironik Mühendisliği</a></li>
+                                    <li><a href="/Category/Index/">Uzay Mühendisliği</a></li>
+                                    <li><a href="/Category/Index/">Mekine Mühendisliği</a></li>
+                                    <li><a href="/Category/Index/">inşaat Mühendisliği</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
 
-                    <li><a href="about.html">Hakkımızda</a></li>
-                    <li><a href="contact.html">iletişim</a></li>
+                    <li><a href="/About/Index/">Hakkımızda</a></li>
+                    <li><a href="/Contact/Index/">İletişim</a></li>
                 </ul>
             </nav><!-- .navbar -->
 
@@ -97,7 +125,6 @@
     <div class="container">
         <main role="main" class="pb-3">
 
-
             @RenderBody()
         </main>
     </div>
@@ -113,28 +140,63 @@
                         <p>Erzurum Teknik Üniversitesi, Türkiye'nin Erzurum şehrinde bulunan bir devlet üniversitesidir. 2010 yılında kurulmuştur. Çeşitli mühendislik ve fen bilimleri alanlarında lisans, yüksek lisans ve doktora programları sunmaktadır. Üniversite, bölgedeki teknolojik ve bilimsel gelişime katkıda bulunmayı hedeflemektedir. Ana kampüsü Erzurum'un Palandöken ilçesindedir.</p>
                         <p><a href="about.html" class="footer-link-more">Daha fazla</a></p>
                     </div>
-                    <div class="col-6 col-lg-2">
+                    <div class="col-6 col-lg-4">
                         <h3 class="footer-heading">İşlemler</h3>
                         <ul class="footer-links list-unstyled">
-                            <li><a href="index.html"><i class="bi bi-chevron-right"></i> Anasayfa</a></li>
-                            <li><a href="category.html"><i class="bi bi-chevron-right"></i> Bölümler</a></li>
-                            <li><a href="about.html"><i class="bi bi-chevron-right"></i> Hakkımızda</a></li>
-                            <li><a href="contact.html"><i class="bi bi-chevron-right"></i> iletişim</a></li>
+                            <li><a href="/Main/Index/"><i class="bi bi-chevron-right"></i> Anasayfa</a></li>
+                            <li class="dropdown">
+                                <a><span>Bölümler</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                                <ul>
+                                    <li class="dropdown">
+                                        <a href="#"><span>Edebiyat Fakültesi</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                                        <ul>
+                                            <li><a href="/Category/Index/">Bilgisayar Mühendisliği</a></li>
+                                            <li><a href="/Category/Index/">Elektirik elektironik Mühendisliği</a></li>
+                                            <li><a href="/Category/Index/">Uzay Mühendisliği</a></li>
+                                            <li><a href="/Category/Index/">Mekine Mühendisliği</a></li>
+                                            <li><a href="/Category/Index/">inşaat Mühendisliği</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#"><span>Mühendislik Fakültesi</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                                        <ul>
+                                            <li><a href="/Category/Index/">Bilgisayar Mühendisliği</a></li>
+                                            <li><a href="/Category/Index/">Elektirik elektironik Mühendisliği</a></li>
+                                            <li><a href="/Category/Index/">Uzay Mühendisliği</a></li>
+                                            <li><a href="/Category/Index/">Mekine Mühendisliği</a></li>
+                                            <li><a href="/Category/Index/">inşaat Mühendisliği</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#"><span>Sağlık fakültesi</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                                        <ul>
+                                            <li><a href="/Category/Index/">Bilgisayar Mühendisliği</a></li>
+                                            <li><a href="/Category/Index/">Elektirik elektironik Mühendisliği</a></li>
+                                            <li><a href="/Category/Index/">Uzay Mühendisliği</a></li>
+                                            <li><a href="/Category/Index/">Mekine Mühendisliği</a></li>
+                                            <li><a href="/Category/Index/">inşaat Mühendisliği</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#"><span>Fen Fakültesi</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                                        <ul>
+                                            <li><a href="/Category/Index/">Bilgisayar Mühendisliği</a></li>
+                                            <li><a href="/Category/Index/">Elektirik elektironik Mühendisliği</a></li>
+                                            <li><a href="/Category/Index/">Uzay Mühendisliği</a></li>
+                                            <li><a href="/Category/Index/">Mekine Mühendisliği</a></li>
+                                            <li><a href="/Category/Index/">inşaat Mühendisliği</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            </li>
+                            <li><a href="/About/Index/"><i class="bi bi-chevron-right"></i> Hakkımızda</a></li>
+                            <li><a href="/Contact/Index/"><i class="bi bi-chevron-right"></i>İletişim</a></li>
                         </ul>
                     </div>
-                    <div class="col-6 col-lg-2">
-                        <h3 class="footer-heading">Etkinlikler</h3>
-                        <ul class="footer-links list-unstyled">
-                            <li><a href="category.html"><i class="bi bi-chevron-right"></i> Yarışmalar</a></li>
-                            <li><a href="category.html"><i class="bi bi-chevron-right"></i> Etkinlikler</a></li>
-                            <li><a href="category.html"><i class="bi bi-chevron-right"></i> Duyurular</a></li>
-                            <li><a href="category.html"><i class="bi bi-chevron-right"></i> Spor</a></li>
-                            <li><a href="category.html"><i class="bi bi-chevron-right"></i> Konferanslar</a></li>
+                   
 
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-4">
+                    <div class="col-lg-4">---
                         <h3 class="footer-heading">Duyurular</h3>
 
                         <ul class="footer-links footer-blog-entry list-unstyled">
@@ -177,10 +239,9 @@
                                     </div>
                                 </a>
                             </li>
-
                         </ul>
 
-                    </div>
+                    </div>---
                 </div>
             </div>
         </div>

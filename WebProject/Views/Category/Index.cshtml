@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<WebProject.Models.Person>
+<br>
+<br>
+<br>
+<br>
+<div id="person_list" class="row" style="display: flex; flex-wrap: wrap;">
+    <h3 class="block_title col-md-12">Kişiler</h3>
+    <div class="col-md-12">
+        @if (Model != null && Model.Any())
+        {
+        <div class="row">
+            @foreach (var person in Model)
+            {
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <div class="col-md-4">
+                    <a href="/Personal/Index/@person.AkademisyenNo" class="person_link">
+                        <div class="person_item" style="display: flex; margin-bottom: 20px; border: 1px solid #ccc; padding: 10px;">
+                            @if (!string.IsNullOrEmpty(person.ResimUrl))
+                            {
+                                <img src="@person.ResimUrl" alt="Kişi Resmi" style="margin-right: 10px; max-width: 100px;" />
+                            }
+                            <div class="details">
+                                <div class="AdSoyad">@person.AdSoyad</div>
+                                <div class="TelefonNumarasi">@person.TelefonNUmarası</div>
+                                <div class="Eposta">@person.Eposta</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+            }
+        </div>
+        }
+        else
+        {
+            <p>Kişiler bulunamadı.</p>
+        }
+    </div>
+</div>
+
+<style>
+    /* Tıklama efekti */
+    .person_link {
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease;
+    }
+
+        .person_link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+</style>
+
+<!-- /Kişilerin Listesi -->
