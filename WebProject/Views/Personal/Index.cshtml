@@ -2,7 +2,9 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@model IEnumerable<WebProject.Models.Person>
+
+@model Dictionary<WebProject.Models.Person, List<WebProject.Models.Project>>
+
 <br>
 <br>
 <br>
@@ -10,76 +12,65 @@
 <br>
 
 <div id="person_list" class="container">
-    
-    <div class="row">
-        @if (Model != null && Model.Any())
+
+    @if (Model != null)
+    {
+        // Loop through each person-project pair in the Model (Dictionary)
+        @foreach (var personProjectsPair in Model)
         {
-            @foreach (var person in Model)
-            {
-                
-                    <div class="person_item">
-                        <a>
+            var person = personProjectsPair.Key;
+            var projects = personProjectsPair.Value;
+
+            <div class="row person_item">
+
+                <div class="col-md-4">
+                    <h2>@person.AdSoyad</h2>
+                    <ul>
+                        <li>Akademisyen No: @person.AkademisyenNo</li>
+                        <li>E-posta: @person.Eposta</li>
+                        <li>Unvanı: @person.Hakkında</li>
+                        <li>Telefon Numarası: @person.TelefonNUmarası</li>
+                        <li>Hakkında: @person.Hakkında</li>
+                        <li>
                             @if (!string.IsNullOrEmpty(person.ResimUrl))
                             {
-                                <img src="@person.ResimUrl" alt="Kişi Resmi" class="person_image" />
+                                <img src="@person.ResimUrl" alt="@person.AdSoyad resim" class="person-image">
                             }
-                        <div class="person_details">
-                            <div class="AdSoyad:">@person.AdSoyad</div>
-                            <div class="TelefonNumarasi:">@person.TelefonNUmarası</div>
-                            <div class="Eposta:">@person.Eposta</div>
-                            <a>Lisansını Tamamladığı Üniversite:</a>
-                            <div class="Lisans">@person.lisans</div>
-                            <a>YüksekLisansını Tamamladığı Üniversite:</a>
-                            <div class="YüksekLisans">@person.YüksekLisans</div>
-                            <a>Doktorasını Tamamladığı Üniversite:</a>
-                            <div class="Doktora">@person.Doktora</div>
-                            <a>Arastırma Alaları:</a>
-                            <div class="Arastırma">@person.ArastirmaAlanı</div>
+                        </li>
+                    </ul>
+                </div>
 
+                <div class="col-md-8">
+                    <h2>Projeleri</h2>
+                    <ul>
+                        @foreach (var project in projects)
+                        {
+                            <li>
+                                Proje No: @project.ProjeNe<br>
+                                Proje Adı: @project.ProjeIsmi<br>
+                                Proje Açıklaması: @project.ProjeHakkında
+                                @if (!string.IsNullOrEmpty(project.ResimUrl))
+                                {
+                                    <img src="@project.ResimUrl" alt="@project.ProjeIsmi resim" class="project-image">
+                                }
+                            </li>
+                        }
+                    </ul>
+                </div>
 
-
-                        </div>
-                        </a>
-                    </div>
-                
-            }
-        }
-        else
-        {
-            <div class="col-md-12">
-                <p>Kişiler bulunamadı.</p>
             </div>
         }
-    </div>
+    }
+    else
+    {
+        <p>Kişi veya proje bulunamadı.</p>
+    }
 </div>
 
 <style>
-    .block_title {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    .person_item {
-        border: 1px solid #ccc;
-        padding: 10px;
-        margin-bottom: 20px;
-        background-color: #f9f9f9;
-    }
-
-    .person_link {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    .person_image {
-        max-width: 100%;
-        height: 300px;
-        display: block;
-        margin: 0 auto;
-        margin-bottom: 100px;
-    }
-
-    .person_details {
-        text-align: center;
+    .person-image, .project-image {
+        /* Add your desired image styling here */
+        max-width: 150px;
+        height: auto;
     }
 </style>

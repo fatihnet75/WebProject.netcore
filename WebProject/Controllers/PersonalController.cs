@@ -18,15 +18,20 @@ namespace WebProject.Controllers
 
         public IActionResult Index(int id)
         {
-            var targetPerson = _context.Person.FirstOrDefault(person => person.AkademisyenNo == id);
+            // Kişiyi veritabanından al
+            var person = _context.Person.FirstOrDefault(p => p.AkademisyenNo == id);
 
-            if (targetPerson != null)
-            {
-                return View(new List<WebProject.Models.Person> { targetPerson }); // Kişinin detaylarını içeren view'e koleksiyon olarak yönlendir
-            }
+            // Kişiye ait projeleri veritabanından al
+            var projects = _context.Project.Where(project => project.ProjeNe == id).ToList();
 
-            return NotFound(); // Kişi bulunamazsa 404 Not Found dön
+            // Kişi ve projelerin koleksiyonunu View'e gönder
+            var personProjects = new Dictionary<Person, List<Project>>();
+            personProjects.Add(person, projects);
+            return View(personProjects);
         }
+
+
+
 
     }
 }
