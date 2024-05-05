@@ -15,13 +15,14 @@ namespace WebProject.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int id)
         {
+            // Belirli bir kategoriye ait tüm kişileri veritabanından çekiyoruz
+            var peopleInCategory = _context.Person.Where(p => p.BolumNo == id).ToList();
 
-            // Tüm kişileri veritabanından çekiyoruz
-            var persons = _context.Person.ToList();
-
-            return View(persons); // Kişileri Index.cshtml görünümüne iletiyoruz
+            return View(peopleInCategory); // Kişileri Index.cshtml görünümüne iletiyoruz
         }
+
+
     }
 }
