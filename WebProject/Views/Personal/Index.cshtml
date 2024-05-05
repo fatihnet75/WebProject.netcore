@@ -23,36 +23,40 @@
 
             <div class="row person_item">
 
-                <div class="col-md-4">
+                <div class="col-md-4 person-info">
+                    <li>
+                        @if (!string.IsNullOrEmpty(person.ResimUrl))
+                        {
+                            <img src="@person.ResimUrl" alt="@person.AdSoyad resim" class="person-image">
+                        }
+                    </li>
                     <h2>@person.AdSoyad</h2>
                     <ul>
-                        <li>Akademisyen No: @person.AkademisyenNo</li>
                         <li>E-posta: @person.Eposta</li>
-                        <li>Unvanı: @person.Hakkında</li>
                         <li>Telefon Numarası: @person.TelefonNUmarası</li>
+                        <li>Doktora: @person.Doktora</li>
+                        <li>Yüksek Lisans: @person.YüksekLisans</li>
+                        <li>lisans: @person.lisans</li>
+                        <li>Arastirma Alanları: @person.ArastirmaAlanı</li>
                         <li>Hakkında: @person.Hakkında</li>
-                        <li>
-                            @if (!string.IsNullOrEmpty(person.ResimUrl))
-                            {
-                                <img src="@person.ResimUrl" alt="@person.AdSoyad resim" class="person-image">
-                            }
-                        </li>
                     </ul>
                 </div>
 
-                <div class="col-md-8">
+                <div class="col-md-10 project-list">
                     <h2>Projeleri</h2>
                     <ul>
                         @foreach (var project in projects)
                         {
                             <li>
-                                Proje No: @project.ProjeNe<br>
-                                Proje Adı: @project.ProjeIsmi<br>
-                                Proje Açıklaması: @project.ProjeHakkında
-                                @if (!string.IsNullOrEmpty(project.ResimUrl))
-                                {
-                                    <img src="@project.ResimUrl" alt="@project.ProjeIsmi resim" class="project-image">
-                                }
+                             
+                                <div class="project-details">
+                                    @if (!string.IsNullOrEmpty(project.ResimUrl))
+                                    {
+                                        <img src="@project.ResimUrl" alt="@project.ProjeIsmi resim" class="project-image">
+                                    }
+                                    <p>Proje Adı: @project.ProjeIsmi</p>
+                                    <p>Proje Açıklaması: @project.ProjeHakkında</p>
+                                </div>
                             </li>
                         }
                     </ul>
@@ -67,10 +71,35 @@
     }
 </div>
 
+
 <style>
-    .person-image, .project-image {
-        /* Add your desired image styling here */
-        max-width: 150px;
+    /* Add your desired styles here */
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .person-item {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    .person-info, .project-list {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .person-image {
+        width: 100%;
+        max-width: 200px;
         height: auto;
     }
+
+    
+  
+
+        
 </style>
