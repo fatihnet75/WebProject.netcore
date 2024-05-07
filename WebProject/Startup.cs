@@ -26,7 +26,8 @@ namespace WebProject
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
+            services.AddMvc();
+            services.AddSession();
             // Veritabaný baðlantýsýný ekleyin
             services.AddDbContext<EtuAkademiContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -48,7 +49,7 @@ namespace WebProject
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthorization();
@@ -58,6 +59,9 @@ namespace WebProject
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Main}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
+                   name: "Admin",
+                   pattern: "{area:exists}/{controller=Giris}/{action=Index}/{id?}");
             });
         }
     }

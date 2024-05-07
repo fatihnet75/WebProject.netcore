@@ -1,0 +1,124 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="tr" class="body-full-height">
+<head>
+    <!-- META SECTION -->
+    <title>ETÜ Dijital Dönüşüm Ofisi Yönetim Paneli</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    @*<script src="~/Content/Scripts/jquery-1.8.3.js"></script>*@
+    @*<script src="~/Content/Scripts/jquery-1.8.3.intellisense.js"></script>*@
+    @*<script src="~/Content/Scripts/jquery.unobtrusive-ajax.min.js"></script>*@
+
+
+
+
+
+    <link rel="icon" href="~/Content/images/favicon.ico" type="image/x-icon" />
+    <!-- END META SECTION -->
+    <!-- CSS INCLUDE -->
+    <link href="~/Content/css/theme-default.css" rel="stylesheet" />
+    <!-- EOF CSS INCLUDE -->
+</head>
+<body>
+
+    <div class="login-container lightmode" id="girisCtrl">
+
+        <div class="login-box animated fadeInDown">
+            <div class="login-logo"></div>
+            <div class="login-body">
+                <div class="login-title"><h6>Hoşgeldiniz, Giriş Yapınız </h6></div>
+
+
+                <div class="form-horizontal form-group">
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" v-model="giris.Email" name="Email" placeholder="Email Adresi" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input type="password" class="form-control" v-model="giris.Parola" name="Parola" placeholder="Parola" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <a v-on:click="oturumuKapat()" class="btn btn-link btn-block">Oturumu Kapat</a>
+                    </div>
+                    <div class="col-md-6">
+                        <button v-on:click="girisSorgula()" class="btn btn-info btn-block">GİRİŞ</button>
+                    </div>
+                </div>
+
+                <div class="login-subtitle" id="divSonuc">
+
+                </div>
+
+            </div>
+            <div class="login-footer">
+                <div class="pull-left">
+                    &copy; Copyright 2010 ETÜ Dijital Dönüşüm Ofisi Yönetim Paneli
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="~/axios/axios.js"></script>
+    <script src="~/vue/vue.js"></script>
+    <script>
+        var girisCtrl = new Vue({
+            el: "#girisCtrl",
+            data: {
+                giris: {}
+            },
+            mounted: function () {
+                this.girisSorgula;
+                this.oturumuKapat;
+            },
+            methods: {
+                girisSorgula: function () {
+                    var vm = this;
+                    axios.post("Giris/GirisSorgula", vm.giris)
+                        .then(function (cevap) {//controllerdan gelen cevap
+                            alert(cevap.data.message);
+                            document.getElementById("divSonuc").innerHTML = cevap.data.message;
+                            if (cevap.data.result) {
+                                window.location.href = cevap.data.url;//url yönlendir.
+                            }
+
+                        })
+                        .catch(function (error) {
+                            document.getElementById("divSonuc").innerHTML = error.data.message;
+                            alert(error.data.message);
+                        });
+                },
+                oturumuKapat: function () {
+                    axios.post("Giris/OturumuKapat")
+                        .then(function (response) {
+                            alert("Oturum kapatılıyor...");
+                        })
+                        .catch(function (error) {
+                            alert(error.data.message);
+                        });
+                }
+            }
+        })
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+

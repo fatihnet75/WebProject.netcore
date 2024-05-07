@@ -1,0 +1,208 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model WebProject.Models.GenelAyarlar
+
+
+
+
+<script type="text/javascript" src="~/Content/Content/Script/js/plugins/bootstrap/bootstrap-file-input.js"></script>
+<script type="text/javascript" src="~/Content/Content/Script/js/plugins/bootstrap/bootstrap-select.js"></script>
+<script type="text/javascript" src="~/Content/Content/Script/js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
+<script type="text/javascript" src="~/Content/Content/Script/js/plugins/summernote/summernote.js"></script>
+
+
+
+<!-- RENDER -->
+<div class="page-content-wrap">
+    <div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm("GenelAyarlar", "Giris", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+
+                <div class="form-horizontal">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><strong>Genel</strong> Ayarlar</h3>
+
+
+
+                            <ul class="panel-controls">
+                                <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="panel-body">
+
+
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Site Adı</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <input type="text" class="form-control" name="SiteAdi" value="@Model.SiteAdi" />
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Web Adresi</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <input type="text" class="form-control" name="WebAdres" value="@Model.WebAdres" />
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Adres</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <input type="text" class="form-control" name="Adres" value="@Model.Adres" />
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Tel</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <input type="text" class="form-control" name="Tel" value="@Model.Tel" />
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Fax</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <input type="text" class="form-control" name="Fax" value="Model.Fax" />
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Email</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <input type="text" class="form-control" name="Email" value="Model.Email" />
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Kısa Tarihçe (Sitenin Altında Görünür)</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <textarea class="summernote" rows="10" name="KisaTarihce">Model.KisaTarihce</textarea>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Meta Author</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <input type="text" class="form-control" name="MetaAuthor" value="@Model.MetaAuthor" />
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Meta Keywords</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <input type="text" class="form-control" name="MetaKeyWords" value="@Model.MetaKeyWords" />
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Meta Description</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <input type="text" class="form-control" name="MetaDescription" value="Model.MetaDescription" />
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Facebook Link</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                        <input type="text" class="form-control" name="Facebook" value="Model.Facebook" />
+                                    </div>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Twitter Link</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                        <input type="text" class="form-control" name="Twitter" value="Model.Twitter" />
+                                    </div>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Google Plus Link</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                        <input type="text" class="form-control" name="GooglePlus" value="Model.GooglePlus" />
+                                    </div>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Instagram Link</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                        <input type="text" class="form-control" name="Instagram" value="Model.Instagram" />
+                                    </div>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Linkedln Link</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                        <input type="text" class="form-control" name="Linkedln" value="Model.Linkedln" />
+                                    </div>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Youtube Link</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                        <input type="text" class="form-control" name="Youtube" value="Model.Youtube" />
+                                    </div>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn btn-default">Temizle</button>
+                            <button class="btn btn-primary pull-right">Kaydet</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            }
+        </div>
+    </div>
+</div>
+<!-- RENDER -->

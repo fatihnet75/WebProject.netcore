@@ -7,46 +7,6 @@
   <ItemGroup>
     <None Include="wwwroot\css\main.css" />
     <None Include="wwwroot\css\variables.css" />
-    <None Include="wwwroot\img\apple-touch-icon.png" />
-    <None Include="wwwroot\img\favicon.png" />
-    <None Include="wwwroot\img\logo.png" />
-    <None Include="wwwroot\img\person-1.jpg" />
-    <None Include="wwwroot\img\person-2.jpg" />
-    <None Include="wwwroot\img\person-3.jpg" />
-    <None Include="wwwroot\img\person-4.jpg" />
-    <None Include="wwwroot\img\person-5.jpg" />
-    <None Include="wwwroot\img\person-6.jpg" />
-    <None Include="wwwroot\img\person-7.jpg" />
-    <None Include="wwwroot\img\post-landscape-1.jpg" />
-    <None Include="wwwroot\img\post-landscape-2.jpg" />
-    <None Include="wwwroot\img\post-landscape-3.jpg" />
-    <None Include="wwwroot\img\post-landscape-4.jpg" />
-    <None Include="wwwroot\img\post-landscape-5.jpg" />
-    <None Include="wwwroot\img\post-landscape-6.jpg" />
-    <None Include="wwwroot\img\post-landscape-7.jpg" />
-    <None Include="wwwroot\img\post-landscape-8.jpg" />
-    <None Include="wwwroot\img\post-portrait-1.jpg" />
-    <None Include="wwwroot\img\post-portrait-2.jpg" />
-    <None Include="wwwroot\img\post-portrait-3.jpg" />
-    <None Include="wwwroot\img\post-portrait-4.jpg" />
-    <None Include="wwwroot\img\post-portrait-5.jpg" />
-    <None Include="wwwroot\img\post-portrait-6.jpg" />
-    <None Include="wwwroot\img\post-portrait-7.jpg" />
-    <None Include="wwwroot\img\post-portrait-8.jpg" />
-    <None Include="wwwroot\img\post-slide-1.jpg" />
-    <None Include="wwwroot\img\post-slide-2.jpg" />
-    <None Include="wwwroot\img\post-slide-3.jpg" />
-    <None Include="wwwroot\img\post-slide-4.jpg" />
-    <None Include="wwwroot\img\post-slide-5.jpg" />
-    <None Include="wwwroot\img\post-slide-6.jpg" />
-    <None Include="wwwroot\img\post-sq-1.jpg" />
-    <None Include="wwwroot\img\post-sq-2.jpg" />
-    <None Include="wwwroot\img\post-sq-3.jpg" />
-    <None Include="wwwroot\img\post-sq-4.jpg" />
-    <None Include="wwwroot\img\post-sq-5.jpg" />
-    <None Include="wwwroot\img\post-sq-6.jpg" />
-    <None Include="wwwroot\img\post-sq-7.jpg" />
-    <None Include="wwwroot\img\post-sq-8.jpg" />
     <None Include="wwwroot\js\main.js" />
     <None Include="wwwroot\scss\Readme.txt" />
     <None Include="wwwroot\scss\variables.css" />
@@ -115,6 +75,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -122,6 +83,10 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Content\Script\js\plugins\fileinput\fileinput\" />
   </ItemGroup>
 
 </Project>
