@@ -1,9 +1,4 @@
-﻿@{
-    Layout = null;
-}
-
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr" class="body-full-height">
 <head>
     <!-- META SECTION -->
@@ -11,18 +6,19 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    @*<script src="~/Content/Scripts/jquery-1.8.3.js"></script>*@
-    @*<script src="~/Content/Scripts/jquery-1.8.3.intellisense.js"></script>*@
-    @*<script src="~/Content/Scripts/jquery.unobtrusive-ajax.min.js"></script>*@
-
-
-
-
 
     <link rel="icon" href="~/Content/images/favicon.ico" type="image/x-icon" />
     <!-- END META SECTION -->
     <!-- CSS INCLUDE -->
-    <link href="~/Content/css/theme-default.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" /> <!-- Normalize.css -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" /> <!-- Bootstrap -->
+    <link href="/Content/css/theme-default.css" rel="stylesheet" /> <!-- Your custom styles -->
+    <style>
+        .body-full-height {
+            background-image: url('/images/wall_1.jpg');
+            background-size: cover;
+        }
+    </style>
     <!-- EOF CSS INCLUDE -->
 </head>
 <body>
@@ -50,7 +46,9 @@
                         <a v-on:click="oturumuKapat()" class="btn btn-link btn-block">Oturumu Kapat</a>
                     </div>
                     <div class="col-md-6">
-                        <button v-on:click="girisSorgula()" class="btn btn-info btn-block">GİRİŞ</button>
+                        <button v-on:click="girisSorgula()" class="btn btn-info bAtn-block">GİRİŞ</button>
+
+
                     </div>
                 </div>
 
@@ -68,44 +66,48 @@
         </div>
 
     </div>
-
-    <script src="~/axios/axios.js"></script>
-    <script src="~/vue/vue.js"></script>
+    <!-- Vue.js ve Axios Kütüphaneleri -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> <!-- Axios -->
     <script>
-        var girisCtrl = new Vue({
+        var girisCtrl= new Vue({
             el: "#girisCtrl",
             data: {
-                giris: {}
-            },
-            mounted: function () {
-                this.girisSorgula;
-                this.oturumuKapat;
+                giris: {
+                    Email: '',
+                    Parola: ''
+                }
             },
             methods: {
                 girisSorgula: function () {
+                    alert("girisSorgula fonksiyonu çağrıldı");
                     var vm = this;
-                    axios.post("Giris/GirisSorgula", vm.giris)
-                        .then(function (cevap) {//controllerdan gelen cevap
-                            alert(cevap.data.message);
-                            document.getElementById("divSonuc").innerHTML = cevap.data.message;
-                            if (cevap.data.result) {
-                                window.location.href = cevap.data.url;//url yönlendir.
-                            }
+                    // Gerçek URL'yi belirtin
+                    
+                    // Girilen e-posta ve şifreyi kullanarak gerçek bir giriş isteği gönderin
+                    axios.post("/GirisController/GirisSorgula", vm.giris)
 
+                        .then( response => {
+                            // Giriş başarılı ise
+                            if (response.data.Result) {
+                                alert("Giriş başarılı");
+                                // Başarılı giriş olduğunda anasayfaya yönlendirme
+                                window.location.href = response.data.url;
+                            } else {
+                                // Giriş başarısız ise
+                                alert(response.data.Message);
+                                document.getElementById("divSonuc").innerHTML = response.data.Message;
+                            }
                         })
-                        .catch(function (error) {
-                            document.getElementById("divSonuc").innerHTML = error.data.message;
-                            alert(error.data.message);
+                        .catch( error=> {
+                            // Hata durumunda
+                            alert("Giriş başarısız", error);
+                            console.log(error.Message);
+                            document.getElementById("divSonuc").innerHTML = "Giriş başarısız";
                         });
                 },
                 oturumuKapat: function () {
-                    axios.post("Giris/OturumuKapat")
-                        .then(function (response) {
-                            alert("Oturum kapatılıyor...");
-                        })
-                        .catch(function (error) {
-                            alert(error.data.message);
-                        });
+                    // Oturumu kapatmak için gerçek bir istek gönderilebilir
                 }
             }
         })
@@ -114,11 +116,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
