@@ -59,9 +59,9 @@ namespace WebProject
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Main}/{action=Index}/{id?}");
-                endpoints.MapControllerRoute(
-                   name: "Admin",
-                   pattern: "{area:exists}/{controller=Giris}/{action=Giris}/{id?}");
+               
+                   
+                
             });
         }
     }

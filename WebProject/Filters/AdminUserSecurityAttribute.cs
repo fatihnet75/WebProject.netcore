@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebProject.Areas.Admin.Filters
+namespace ETUDDO.Areas.Admin.Filters
 {
     public class AdminUserSecurityAttribute : ActionFilterAttribute
     {

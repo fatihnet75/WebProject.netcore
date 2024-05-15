@@ -1,0 +1,233 @@
+﻿@{
+    Layout = null;
+}
+<!doctype html>
+<!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="tr">
+<!--<![endif]-->
+<head>
+
+    <!-- Head Partial -->
+    <title>Yönetim Paneli Anasayfa</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+    <!-- Tema JS&CSS -->
+    <img src="~/Content/Image/favicon.ico" />
+    <link href="~/Content/css/theme-default.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <!-- BAŞLANGIÇ KONTEYNER -->
+    <div class="page-container">
+        <!-- BAŞLANGIÇ KENAR ÇUBUĞU -->
+        <div class="page-sidebar">
+            <!-- BAŞLANGIÇ X-NAVIGATION MENÜ -->
+            <ul class="x-navigation">
+                <li class="xn-profile">
+                    <a href="#" class="profile-mini">
+                        <img src="~/Content/~/Content/Image/img/Fatih.JPEG" alt="ETÜ" />
+                    </a>
+                    <div class="profile">
+                        <div class="profile-image">
+                            <img src="~/Content/Image/img/Fatih.JPEG" alt="ETÜ" />
+                        </div>
+                        <div class="profile-data">
+                            <div class="profile-data-name">Bil. Müh. Fatih Gürbüz</div>
+                            <div class="profile-data-title">Yönetici</div>
+                        </div>
+
+                    </div>
+
+
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-sitemap"></span> <span class="xn-text">Akademisyenler</span></a>
+                    <ul>
+                        <li><a href="/Admin/KadroYonetimi/KadroEkle"><span class="fa fa-flag"></span>Akademisyen Ekle</a></li>
+                        <li><a href="/Admin/KadroYonetimi/KadroListele"><span class="fa fa-flag"></span>Akademisyen  sil</a></li>
+                    </ul>
+                </li>
+
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-sitemap"></span> <span class="xn-text">Proje Yönetimi</span></a>
+                    <ul>
+                        <li><a href="/Admin/IcerikYonetimi/UstMenuEkle"><span class="fa fa-flag"></span>Proje Ekle</a></li>
+                        <li><a href="menulistele.html"><span class="fa fa-flag"></span>Proje sil</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-folder"></span> <span class="xn-text">Bölüm Yönetimi</span></a>
+                    <ul>
+                        <li><a href="/Admin/FormYonetimi/FormEkle"><span class="fa fa-wrench"></span>Bölüm Ekle</a></li>
+                        <li><a href="/Admin/FormYonetimi/FormListele"><span class="fa fa-sort-alpha-asc"></span>Bölüm sil</a></li>
+                    </ul>
+                </li>
+
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-pencil"></span> <span class="xn-text">Admin Yönetimi</span></a>
+                    <ul>
+                        <li><a href="/Admin/IcerikYonetimi/IcerikEkle"><span class="fa fa-wrench"></span>Yeni Admin Ekle</a></li>
+                        <li><a href="/Admin/IcerikYonetimi/IcerikListele"><span class="fa fa-sort-alpha-asc"></span>Admin Listele</a></li>
+                    </ul>
+                </li>
+
+
+
+            </ul>
+            <!-- BİTİŞ X-NAVIGATION MENÜ-->
+        </div>
+        <!-- BİTİŞ KENAR ÇUBUĞU -->
+        <!-- SAYFA İÇERİĞİ -->
+        <div class="page-content">
+
+            <!-- X-NAVİGASYON MENÜ DİKEY BAŞLAT -->
+            <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+
+                <!-- TOGGLE NAVIGATION -->
+                <li class="xn-icon-button">
+                    <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
+                </li>
+                <!-- TOGGLE NAVIGATION -->
+                <!-- ARAMA -->
+                <li class="xn-search">
+                    <form role="form">
+                        <input type="text" name="search" placeholder="Arama..." />
+                    </form>
+                </li>
+                <!-- ARAMA -->
+                <!-- ÇIKIŞ -->
+                <li class="xn-icon-button pull-right">
+                    <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>
+                </li>
+                <!-- ÇIKIŞ -->
+                <!-- MESAJ BAŞLANGIÇ -->
+                <li class="xn-icon-button pull-right">
+                    <a href="#"><span class="fa fa-comments"></span></a>
+                    <div class="informer informer-danger">1</div>
+                    <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><span class="fa fa-comments"></span> Mesajlar</h3>
+                            <div class="pull-right">
+                                <span class="label label-danger">Yeni 1</span>
+                            </div>
+                        </div>
+                        <div class="panel-body list-group list-group-contacts scroll" style="height: 200px;">
+
+
+                            <a href="/Admin/MesajYonetimi/MesajDetay/item.Id" class="list-group-item">
+                                <div class="list-group-status status-online"></div>
+                                <span class="fa fa-envelope"></span>
+                                <span class="contacts-title">Emre Çintaş</span>
+                                <p>Konu</p>
+                            </a>
+
+
+
+
+                        </div>
+                        <div class="panel-footer text-center">
+                            <a href="/Admin/MesajYonetimi/TumMesajListele">Tüm Mesajlar</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- MESAJ BİTİŞ -->
+
+
+
+
+            </ul>
+            <!-- X-NAVİGASYON MENÜ DİKEY BİTİR -->
+            <!-- BREADCRUMB'U BAŞLAT -->
+            <ul class="breadcrumb">
+                <li>Panel</li>
+                <li class="active"><a href="/Admin/Giris/AnaSayfa">Ana Sayfa</a></li>
+            </ul>
+            <!-- BREADCRUMB'U BİTİR -->
+            <!-- RENDER -->
+            <div class="page-content-wrap">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        @RenderBody()
+
+                    </div>
+                </div>
+            </div>
+            <!-- RENDER -->
+            <!-- END PAGE CONTENT WRAPPER -->
+        </div>
+        <!-- SAYFA İÇERİĞİ -->
+    </div>
+    <!-- BİTİŞ KONTEYNER -->
+    <!-- MESAJ KUTUSU-->
+
+    <div class="pull-right">
+        <a href="#" class="btn btn-success btn-lg" id="logout-confirm">Evet</a>
+        <a href="#" class="btn btn-default btn-lg mb-control-close">Hayır</a>
+    </div>
+
+    <script>
+        // Evet butonuna tıklandığında...
+        document.getElementById("logout-confirm").addEventListener("click", function () {
+            // Kullanıcıya çıkış yapmak istediğinden emin olduğunu sor
+            var confirmLogout = confirm("Çıkış yapmak istediğinizden emin misiniz?");
+
+            // Kullanıcı evet derse
+            if (confirmLogout) {
+                // AdminLogin sayfasına yönlendir
+                window.location.href = "/AdminLogin";
+            }
+        });
+    </script>
+
+
+    <!-- MESAJ KUTUSU-->
+    <!-- SES ÖN YÜKLEMELERİ BAŞLAT -->
+    <audio id="audio-alert" src="~/Content/Content/Audio/alert.mp3" preload="auto"></audio>
+    <audio id="audio-fail" src="~/Content/Content/Audio/fail.mp3" preload="auto"></audio>
+
+    <!-- SES ÖN YÜKLEMELERİ BİTİR -->
+    <!-- SCRIPTS -->
+    <!-- PLUGINS -->
+
+    <script src="~/Content/Content/Script/js/plugins/jquery/jquery.min.js"></script>
+    <script src="~/Content/Content/Script/js/plugins/jquery/jquery-ui.min.js"></script>
+    <script src="~/Content/Content/Script/js/plugins/bootstrap/bootstrap.min.js"></script>
+    <!-- PLUGINS -->
+    <!-- BU SAYFA EKLENTİLERİNİ BAŞLAT-->
+    <script type='text/javascript' src='~/Content/Content/Script/js/plugins/icheck/icheck.min.js'></script>
+    <script type="text/javascript" src="~/Content/Content/Script/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+    <script type="text/javascript" src="~/Content/Content/Script/js/plugins/scrolltotop/scrolltopcontrol.js"></script>
+
+    <script type="text/javascript" src="~/Content/Content/Script/js/plugins/morris/raphael-min.js"></script>
+    <script type="text/javascript" src="~/Content/Content/Script/js/plugins/morris/morris.min.js"></script>
+    <script type="text/javascript" src="~/Content/Content/Script/js/plugins/rickshaw/d3.v3.js"></script>
+    <script type="text/javascript" src="~/Content/Content/Script/js/plugins/rickshaw/rickshaw.min.js"></script>
+    <script type='text/javascript' src='~/Content/Content/Script/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'></script>
+    <script type='text/javascript' src='~/Content/Content/Script/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'></script>
+    <script type='text/javascript' src='~/Content/Content/Script/js/plugins/bootstrap/bootstrap-datepicker.js'></script>
+    <script type="text/javascript" src="~/Content/Content/Script/js/plugins/owl/owl.carousel.min.js"></script>
+
+    <script type="text/javascript" src="~/Content/Content/Script/js/plugins/moment.min.js"></script>
+    <script type="text/javascript" src="~/Content/Content/Script/js/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- BU SAYFA EKLENTİLERİNİ BİTİR-->
+    <!-- ŞABLONU BAŞLAT -->
+    <script type="text/javascript" src="~/Content/Content/Script/js/settings.js"></script>
+
+    <script type="text/javascript" src="~/Content/Content/Script/js/plugins.js"></script>
+    <script type="text/javascript" src="~/Content/Content/Script/js/actions.js"></script>
+
+    <script type="text/javascript" src="~/Content/Content/Script/js/demo_dashboard.js"></script>
+    <!-- ŞABLONU BİTİR -->
+    <!-- SCRIPTS -->
+
+
+</body>
+</html>

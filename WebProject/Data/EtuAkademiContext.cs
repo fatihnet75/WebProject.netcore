@@ -19,8 +19,5 @@ namespace EtüAkademiContext.Data
         public DbSet<WebProject.Models.Bolum> Bolum { get; set; }
         public DbSet<WebProject.Models.Project> Project { get; set; }
         public DbSet<WebProject.Models.Kullanicilar> Kullanicilar { get; set; }
-        public DbSet<WebProject.Models.GenelAyarlar> GenelAyarlar { get; set; }
-
-
     }
 }
