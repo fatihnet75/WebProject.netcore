@@ -25,11 +25,10 @@
     </div>
     <div class="form-group">
         <label asp-for="ProjeNe" class="control-label"></label>
-        <select asp-for="ProjeNe" class="form-control" asp-items="@(new SelectList(ViewBag.PersonList, "PersonId", "AdSoyad"))">
-            <option value="">-- Seçiniz --</option>
-        </select>
+        <input asp-for="ProjeNe" class="form-control" />
         <span asp-validation-for="ProjeNe" class="text-danger"></span>
     </div>
+
     <div class="form-group">
         <input type="submit" value="Kaydet" class="btn btn-primary" />
         <a asp-action="Index" class="btn btn-secondary">İptal</a>
