@@ -9,7 +9,7 @@ namespace WebProject.Controllers
 {
     public class MainController : Controller
     {
-        private EtuAkademiContext _context;
+        private readonly EtuAkademiContext _context;
 
         public MainController(EtüAkademiContext.Data.EtuAkademiContext context)
         {
@@ -19,10 +19,10 @@ namespace WebProject.Controllers
         public IActionResult Index()
         {
 
-            // Tüm kişileri veritabanından çekiyoruz
+           
             var Projects = _context.Project.ToList();
 
-            return View(Projects); // Kişileri Index.cshtml görünümüne iletiyoruz
+            return View(Projects); 
         }
     }
 }

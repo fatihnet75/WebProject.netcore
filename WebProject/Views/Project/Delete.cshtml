@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Proje Sil";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@model WebProject.Models.Project
+
+<h2>Projeyi Sil</h2>
+
+<h3>Bu projeyi silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>Proje</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Proje No
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProjeNo)
+        </dd>
+        <dt class="col-sm-2">
+            Proje İsmi
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProjeIsmi)
+        </dd>
+        <dt class="col-sm-2">
+            Proje Hakkında
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProjeHakkında)
+        </dd>
+        <dt class="col-sm-2">
+            Resim URL
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ResimUrl)
+        </dd>
+        <dt class="col-sm-2">
+            Proje Kimin
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Person.AdSoyad)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="ProjeNo" />
+        <input type="submit" value="Sil" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary">İptal</a>
+    </form>
+</div>

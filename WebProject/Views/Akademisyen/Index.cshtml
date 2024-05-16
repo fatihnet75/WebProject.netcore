@@ -1,8 +1,51 @@
-﻿
+﻿@model IEnumerable<WebProject.Models.Person>
+
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Akademisyen Listesi";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
+<h1>Akademisyen Listesi</h1>
 
+<p>
+    <a asp-action="Create" class="btn btn-primary">Yeni Akademisyen Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Akademisyen No</th>
+            <th>Ad Soyad</th>
+            <th>Bölüm No</th>
+            <th>Telefon Numarası</th>
+            <th>Resim URL</th>
+            <th>Hakkında</th>
+            <th>E-posta</th>
+            <th>Doktora</th>
+            <th>Yüksek Lisans</th>
+            <th>Lisans</th>
+            <th>Araştırma Alanı</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.AkademisyenNo</td>
+                <td>@item.AdSoyad</td>
+                <td>@item.BolumNo</td>
+                <td>@item.TelefonNUmarası</td>
+                <td>@item.ResimUrl</td>
+                <td>@item.Hakkında</td>
+                <td>@item.Eposta</td>
+                <td>@item.Doktora</td>
+                <td>@item.YüksekLisans</td>
+                <td>@item.lisans</td>
+                <td>@item.ArastirmaAlanı</td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.AkademisyenNo" class="btn btn-danger">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

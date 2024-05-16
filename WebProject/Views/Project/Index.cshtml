@@ -1,8 +1,42 @@
-﻿
-@{
-    ViewData["Title"] = "Index";
+﻿@{
+    ViewData["Title"] = "Projeler";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
+@model IEnumerable<WebProject.Models.Project>
 
+<h2>Projeler</h2>
+
+<p>
+    <a asp-action="Create">Yeni Proje Ekle</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Proje No</th>
+            <th>Proje İsmi</th>
+            <th>Proje Hakkında</th>
+            <th>Resim URL</th>
+            <th>Proje Kimin</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.ProjeNo)</td>
+                <td>@Html.DisplayFor(modelItem => item.ProjeIsmi)</td>
+                <td>@Html.DisplayFor(modelItem => item.ProjeHakkında)</td>
+                <td>@Html.DisplayFor(modelItem => item.ResimUrl)</td>
+                <td>@Html.DisplayFor(modelItem => item.Person.AdSoyad)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ProjeNo">Düzenle</a> |
+                    <a asp-action="Details" asp-route-id="@item.ProjeNo">Detaylar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ProjeNo">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

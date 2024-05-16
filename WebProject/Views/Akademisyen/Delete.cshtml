@@ -1,0 +1,42 @@
+﻿
+@model WebProject.Models.Person
+@{
+    ViewData["Title"] = "Akademisyen Sil";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Akademisyen Sil</h1>
+
+<h3>Bu akademisyeni silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>Person</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Ad Soyad</dt>
+        <dd class="col-sm-10">@Model.AdSoyad</dd>
+        <dt class="col-sm-2">Bölüm No</dt>
+        <dd class="col-sm-10">@Model.BolumNo</dd>
+        <dt class="col-sm-2">Telefon Numarası</dt>
+        <dd class="col-sm-10">@Model.TelefonNUmarası</dd>
+        <dt class="col-sm-2">Resim URL</dt>
+        <dd class="col-sm-10">@Model.ResimUrl</dd>
+        <dt class="col-sm-2">Hakkında</dt>
+        <dd class="col-sm-10">@Model.Hakkında</dd>
+        <dt class="col-sm-2">E-posta</dt>
+        <dd class="col-sm-10">@Model.Eposta</dd>
+        <dt class="col-sm-2">Doktora</dt>
+        <dd class="col-sm-10">@Model.Doktora</dd>
+        <dt class="col-sm-2">Yüksek Lisans</dt>
+        <dd class="col-sm-10">@Model.YüksekLisans</dd>
+        <dt class="col-sm-2">Lisans</dt>
+        <dd class="col-sm-10">@Model.lisans</dd>
+        <dt class="col-sm-2">Araştırma Alanı</dt>
+        <dd class="col-sm-10">@Model.ArastirmaAlanı</dd>
+    </dl>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="AkademisyenNo" />
+        <input type="submit" value="Sil" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary">İptal</a>
+    </form>
+</div>

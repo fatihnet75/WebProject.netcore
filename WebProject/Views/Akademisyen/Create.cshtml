@@ -1,0 +1,70 @@
+﻿@model WebProject.Models.Person
+
+@{
+    ViewData["Title"] = "Yeni Akademisyen Ekle";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Yeni Akademisyen Ekle</h1>
+
+<h4>Person</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="AdSoyad" class="control-label"></label>
+                <input asp-for="AdSoyad" class="form-control" />
+                <span asp-validation-for="AdSoyad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BolumNo" class="control-label"></label>
+                <input asp-for="BolumNo" class="form-control" />
+                <span asp-validation-for="BolumNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelefonNUmarası" class="control-label"></label>
+                <input asp-for="TelefonNUmarası" class="form-control" />
+                <span asp-validation-for="TelefonNUmarası" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ResimUrl" class="control-label"></label>
+                <input asp-for="ResimUrl" class="form-control" />
+                <span asp-validation-for="ResimUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hakkında" class="control-label"></label>
+                <input asp-for="Hakkında" class="form-control" />
+                <span asp-validation-for="Hakkında" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Eposta" class="control-label"></label>
+                <input asp-for="Eposta" class="form-control" />
+                <span asp-validation-for="Eposta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Doktora" class="control-label"></label>
+                <input asp-for="Doktora" class="form-control" />
+                <span asp-validation-for="Doktora" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YüksekLisans" class="control-label"></label>
+                <input asp-for="YüksekLisans" class="form-control" />
+                <span asp-validation-for="YüksekLisans" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="lisans" class="control-label"></label>
+                <input asp-for="lisans" class="form-control" />
+                <span asp-validation-for="lisans" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArastirmaAlanı" class="control-label"></label>
+                <input asp-for="ArastirmaAlanı" class="form-control" />
+                <span asp-validation-for="ArastirmaAlanı" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

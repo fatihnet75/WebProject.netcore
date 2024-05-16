@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@model WebProject.Models.Bolum
+
+<h2>Bölüm Ekle</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Bolumno" class="control-label"></label>
+        <input asp-for="Bolumno" class="form-control" />
+        <span asp-validation-for="Bolumno" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Rutbe" class="control-label"></label>
+        <input asp-for="Rutbe" class="form-control" />
+        <span asp-validation-for="Rutbe" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BolumAdı" class="control-label"></label>
+        <input asp-for="BolumAdı" class="form-control" />
+        <span asp-validation-for="BolumAdı" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>
+
+

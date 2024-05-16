@@ -4,5 +4,37 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
+@model IEnumerable<WebProject.Models.Bolum>
+
+<h2>Bölümler</h2>
+
+<p>
+    <a asp-action="Create">Yeni Bölüm Ekle</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Bölüm No</th>
+            <th>Rutbe</th>
+            <th>Bölüm Adı</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Bolumno)</td>
+                <td>@Html.DisplayFor(modelItem => item.Rutbe)</td>
+                <td>@Html.DisplayFor(modelItem => item.BolumAdı)</td>
+                <td>
+                    
+                    <a asp-action="Index" asp-route-id="@item.id">Detaylar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.id">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 

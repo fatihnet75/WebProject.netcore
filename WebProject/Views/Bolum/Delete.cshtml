@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@model WebProject.Models.Bolum
+
+<h2>Bölüm Sil</h2>
+
+<h3>Bu bölümü silmek istediğinize emin misiniz?</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            Bölüm No
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Bolumno)
+        </dd>
+        <dt>
+            Rutbe
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Rutbe)
+        </dd>
+        <dt>
+            Bölüm Adı
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BolumAdı)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="id" />
+        <input type="submit" value="Sil" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-default">İptal</a>
+    </form>
+</div>
+
