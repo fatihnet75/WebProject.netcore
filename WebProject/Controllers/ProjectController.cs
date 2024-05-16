@@ -19,7 +19,7 @@ namespace WebProject.Controllers
         // Listeleme işlemi
         public IActionResult Index()
         {
-            var projects = _context.Project.Include(p => p.Person).ToList();
+            var projects = _context.Project.ToList();
             return View(projects);
         }
 

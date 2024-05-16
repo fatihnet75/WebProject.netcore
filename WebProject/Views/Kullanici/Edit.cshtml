@@ -1,0 +1,25 @@
+﻿@model WebProject.Models.Kullanicilar
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Kullanıcıyı Düzenle</h2>
+
+<form asp-action="Edit">
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Parola" class="control-label"></label>
+        <input asp-for="Parola" class="form-control" />
+        <span asp-validation-for="Parola" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Kaydet" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">İptal</a>
+    </div>
+</form>

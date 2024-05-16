@@ -1,0 +1,35 @@
+﻿@model WebProject.Models.Kullanicilar
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Kullanıcıyı Sil</h2>
+
+<h3>Silmek istediğinizden emin misiniz?</h3>
+
+<div>
+    <h4>Kullanıcı</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Parola)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Parola)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="id" />
+        <input type="submit" value="Sil" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">İptal</a>
+    </form>
+</div>
