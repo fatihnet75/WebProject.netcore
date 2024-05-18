@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using WebProject.Models;
 
 namespace WebProject.Controllers
@@ -43,8 +45,19 @@ namespace WebProject.Controllers
                     return BadRequest(ModelState);
                 }
 
-                var kullanici = _db.Kullanicilar.FirstOrDefault(u => u.Email == data.Email && u.Parola == data.Parola);
+                // Veritabanından kullanıcıyı bul
+                var kullanici = _db.Kullanicilar.FirstOrDefault(u => u.Email == data.Email);
                 if (kullanici == null)
+                {
+                    ModelState.AddModelError("Giris", "Geçersiz Email veya Parola.");
+                    return BadRequest(ModelState);
+                }
+
+                // Girilen parolayı SHA-256 ile şifrele
+                string hashedPassword = HashSHA256(data.Parola);
+
+                // Veritabanındaki şifre ile karşılaştır
+                if (kullanici.Parola != hashedPassword)
                 {
                     ModelState.AddModelError("Giris", "Geçersiz Email veya Parola.");
                     return BadRequest(ModelState);
@@ -57,6 +70,20 @@ namespace WebProject.Controllers
                 return StatusCode(500, new { Result = false, Message = ex.Message });
             }
         }
-    }
 
+        // SHA-256 ile şifreleme işlemi
+        private string HashSHA256(string input)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(input));
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
+    }
 }
