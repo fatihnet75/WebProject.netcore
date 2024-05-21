@@ -99,6 +99,7 @@ namespace WebProject.Controllers
             return View(kullanici);
         }
 
+
         // Silme işlemi (GET)
         public async Task<IActionResult> Delete(int? id)
         {

@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace WebProject.Controllers
 {
+
     public class AkademisyenController : Controller
     {
         private readonly EtuAkademiContext _context;
