@@ -32,9 +32,8 @@
                 <td>@Html.DisplayFor(modelItem => item.ResimUrl)</td>
                 <td>@Html.DisplayFor(modelItem => item.ProjeNe)</td>
                 <td>
-                
-                    <a asp-action="Delete" asp-route-id="@item.ProjeNo">Detaylar</a> |
-                    <a asp-action="Delete" asp-route-id="@item.ProjeNe">Sil</a>
+                    <a asp-action="Delete" asp-route-projeNo="@item.ProjeNo">Detaylar</a> |
+                    <a asp-action="Delete" asp-route-projeNo="@item.ProjeNo">Sil</a>
                 </td>
             </tr>
         }

@@ -45,67 +45,16 @@ namespace WebProject.Controllers
             return View(project);
         }
 
-        // Düzenleme işlemi (GET)
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var project = await _context.Project.FindAsync(id);
-            if (project == null)
-            {
-                return NotFound();
-            }
-            ViewBag.PersonList = _context.Person.ToList();
-            return View(project);
-        }
-
-        // Düzenleme işlemi (POST)
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, Project project)
-        {
-            if (id != project.ProjeNo)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(project);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ProjectExists(project.ProjeNo))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            ViewBag.PersonList = _context.Person.ToList();
-            return View(project);
-        }
-
         // Silme işlemi (GET)
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? projeNo)
         {
-            if (id == null)
+            if (projeNo == null)
             {
                 return NotFound();
             }
 
             var project = await _context.Project
-                .FirstOrDefaultAsync(m => m.ProjeNo == id);
+                .FirstOrDefaultAsync(m => m.ProjeNo == projeNo);
             if (project == null)
             {
                 return NotFound();
@@ -117,17 +66,17 @@ namespace WebProject.Controllers
         // Silme işlemi (POST)
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteConfirmed(int projeNo)
         {
-            var project = await _context.Project.FindAsync(id);
+            var project = await _context.Project.FindAsync(projeNo);
             _context.Project.Remove(project);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ProjectExists(int id)
+        private bool ProjectExists(int projeNo)
         {
-            return _context.Project.Any(e => e.ProjeNo == id);
+            return _context.Project.Any(e => e.ProjeNo == projeNo);
         }
     }
 }
